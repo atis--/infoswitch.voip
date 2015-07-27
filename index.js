@@ -1,3 +1,3 @@
 
-exports.YateExt = require('./lib/YateExt');
-//exports.FSExt = require('./lib/FSExt');
+exports.YateExt = require('./lib/Yate');
+//exports.FSExt = require('./lib/FreeSWITCH');
