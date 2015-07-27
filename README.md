@@ -1,5 +1,5 @@
 
-# infoswitch.js
+# infoswitch.voip
 
 ## Install
 
