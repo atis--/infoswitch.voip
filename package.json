@@ -1,0 +1,18 @@
+{
+  "name": "infoswitch.js",
+  "version": "1.0.0",
+  "description": "Yate & FreeSWITCH external control library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:atis/infoswitch.js.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "carrier": "^0.1.14"
+  }
+}
