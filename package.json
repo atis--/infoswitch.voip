@@ -1,5 +1,5 @@
 {
-  "name": "infoswitch.js",
+  "name": "infoswitch.voip",
   "version": "1.0.0",
   "description": "Yate & FreeSWITCH external control library",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:atis/infoswitch.js.git"
+    "url": "git@bitbucket.org:atis/infoswitch.voip.git"
   },
   "author": "",
   "license": "MIT",
