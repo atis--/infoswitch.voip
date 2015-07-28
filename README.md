@@ -31,16 +31,7 @@ Create Yate PBX instance (default config values are used in this example):
 
             // we could return a bluebird promise here as well
         },
-        authenticateTimeout: 5000,          // how long to wait for authenticator()
-        onOutgoingCall: function (ivrChannel, info) {
-            console.log('outgoing call start!', info);
-        },
-        onIncomingCall: function (incomingChannel, info) {
-            console.log('incoming call start!', info);
-
-            incomingChannel.routeToIVR();
-            // incomingChannel.routeToDestination(...);
-        }
+        authenticateTimeout: 5000           // how long to wait for authenticator()
     });
 
 Connect to Yate. If `reconnectInterval` is set, then we'll keep reconnecting
@@ -58,6 +49,16 @@ important one
     :::js
     pbx.on('error', function (err) {
         console.log(err.stack);
+    });
+
+Call events
+
+    :::js
+    pbx.on('incoming-call', function (channel, info) {
+        console.log('incoming call');
+    });
+    pbx.on('outgoing-call', function (ivr_channel, info) {
+        console.log('outgoing call');
     });
 
 Then there are events related to connection, carrier, and user status
@@ -124,7 +125,7 @@ Make an outgoing call (do this after `connected` or else it'll fail)
 
     :::js
     // make an outgoing call
-    pbx.makeCall({
+    var destination = {
         called: '31999999999',
         routes: [
             {
@@ -138,6 +139,10 @@ Make an outgoing call (do this after `connected` or else it'll fail)
                 called: '00031999999999'
             }
         ]
+    };
+    pbx.makeCall(destination, function (err, ivr_channel) {
+        if (!err)
+            console.log('outgoing call started');
     });
 
 
