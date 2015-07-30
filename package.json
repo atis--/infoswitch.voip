@@ -1,6 +1,6 @@
 {
   "name": "infoswitch.voip",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Yate & FreeSWITCH external control library",
   "main": "index.js",
   "scripts": {
