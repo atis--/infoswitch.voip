@@ -85,6 +85,9 @@ Then there are events related to connection, carrier, and user status
     pbx.on('user-unregister', function (user) {
         console.log('user unregister', user);
     });
+    pbx.on('user-expired', function (user) {
+        console.log('user expired', user);
+    });
 
 ... and then some internal Yate-specific events
 
