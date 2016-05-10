@@ -6,7 +6,7 @@
 Yate & FreeSWITCH external control library.
 
     :::bash
-    npm install ssh://git@bitbucket.org:atis/infoswitch.voip.git
+    npm install --save infoswitch.voip
 
 
 ## Usage
