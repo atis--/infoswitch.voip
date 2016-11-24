@@ -3,7 +3,7 @@
 
 ## Install
 
-Yate & FreeSWITCH external control library.
+Yate external control library.
 
     :::bash
     npm install --save infoswitch.voip
