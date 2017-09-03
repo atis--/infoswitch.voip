@@ -22,14 +22,17 @@ Create Yate PBX instance (default config values are used in this example):
         reconnectInterval: 5000,            // set to `null` to disable reconnect
         callTimeout: 2 * 60 * 60 * 1000,    // 2 hours
         callSetupTimeout: 70 * 1000,        // pick-up timeout
-        allowUnregistered: false,
-        authenticator: function (user, done) {
+        authenticator: function (digest, callback) {
+            // allow calls from unregistered users
+            if (digest.newcall) {
+                callback(null, true);
+                return;
+            }
+
             // always authenticate after 3 seconds
             setTimeout(function () {
-                done(true);
+                callback(null, true);
             }, 3000);
-
-            // we could return a bluebird promise here as well
         },
         authenticateTimeout: 5000           // how long to wait for authenticator()
     });
